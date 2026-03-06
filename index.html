@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mémoire et Convictions : Trois Récits</title>
+    <style>
+        /* --- STYLE CSS --- */
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            padding: 80px 20px;
+            background: #1a1a1a;
+            color: white;
+            border-bottom: 4px solid #d4af37;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: white;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 40px;
+            border-top: 5px solid #d4af37;
+        }
+
+        .tag {
+            background: #eee;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            margin: 15px 0;
+        }
+
+        /* --- 1. Résumé --- */
+        .summary-box {
+            background: #f8f9fa;
+            border-left: 4px solid #d4af37;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        /* --- 2. Fiche Technique --- */
+        .identity-card {
+            background: #ffffff;
+            border: 1px solid #ddd;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-size: 0.95rem;
+        }
+
+        .identity-card h3 {
+            margin-top: 0;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .info-row {
+            margin-bottom: 8px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .info-label { font-weight: 600; width: 220px; color: #555; }
+        .info-value { flex: 1; min-width: 200px; }
+
+        /* --- 3. Avis Personnel --- */
+        .opinion-box {
+            background: #fffdf5;
+            border: 1px dashed #d4af37;
+            padding: 20px;
+            margin-top: 25px;
+            border-radius: 8px;
+        }
+
+        .opinion-box h4 {
+            margin: 0 0 10px 0;
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+
+        /* --- Logique Interactive --- */
+        .toggle-input { display: none; }
+        .details {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: all 0.8s ease;
+        }
+
+        .toggle-input:checked + .details {
+            max-height: 5000px;
+            opacity: 1;
+        }
+
+        .btn-toggle {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background-color: #1a1a1a;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .btn-toggle:hover { background-color: #d4af37; color: #1a1a1a; }
+
+        /* Texte dynamique */
+        #exp-1:checked ~ .btn-toggle::before, 
+        #exp-2:checked ~ .btn-toggle::before,
+        #exp-3:checked ~ .btn-toggle::before { content: "Fermer le dossier"; }
+
+        #exp-1:not(:checked) ~ .btn-toggle::before,
+        #exp-2:not(:checked) ~ .btn-toggle::before,
+        #exp-3:not(:checked) ~ .btn-toggle::before { content: "Consulter le dossier complet"; }
+
+        footer { text-align: center; padding: 60px; color: #777; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Portfolio Maes Noam</h1>
+    <p>Récit d'expérience culturelle</p>
+</header>
+
+<main class="container">
+
+    <article class="card">
+        <span class="tag">Lieu de Mémoire • Belgique</span>
+        <h2>Camp de Breendonk</h2>
+        <p>Ancien fort militaire transformé en camp de détention nazi, symbole de la répression en Belgique.</p>
+        
+        <input type="checkbox" id="exp-1" class="toggle-input">
+        <div class="details">
+            <div class="summary-box">
+                <h4>📖 Contexte Historique</h4>
+                <p>Ancien fort militaire, les nazis le transforment en camp de détention (1940-1944). On y emprisonne résistants, juifs et opposants politiques dans des conditions inhumaines : travail forcé, torture et exécutions.</p>
+            </div>
+
+            <div class="identity-card">
+                <h3>🕯️ Fiche d’identité</h3>
+                <div class="info-row"><span class="info-label">Nom officiel :</span> <span class="info-value">Fort de Breendonk / Mémorial national</span></div>
+                <div class="info-row"><span class="info-label">Lieu :</span> <span class="info-value">Willebroek, Belgique</span></div>
+                <div class="info-row"><span class="info-label">Utilisation nazi :</span> <span class="info-value">1940 - 1944</span></div>
+                <div class="info-row"><span class="info-label">Type de camp :</span> <span class="info-value">Détention et Transit</span></div>
+                <div class="info-row"><span class="info-label">Nombre de prisonniers :</span> <span class="info-value">Environ 3 600</span></div>
+            </div>
+
+            <div class="opinion-box">
+                <h4>Mon Avis Personnel</h4>
+                <p>La visite effectuée en compagnie des professeurs de géographie était particulièrement intéressante et enrichissante. Les guides présents sur place nous ont montré les conditions de vie souvent inhumaines à l’intérieur des camps. Personnellement, j’ai trouvé cette expérience enrichissante et elle nous permet de ne jamais oublier le passé.</p>
+            </div>
+        </div>
+        <label for="exp-1" class="btn-toggle"></label>
+    </article>
+
+    <article class="card">
+        <span class="tag">Hommage • France</span>
+        <h2>Cimetière américain de Normandie</h2>
+        <p>Le repos éternel des soldats tombés lors du Débarquement, surplombant Omaha Beach.</p>
+        
+        <input type="checkbox" id="exp-2" class="toggle-input">
+        <div class="details">
+            <div class="summary-box">
+                <h4>📍 Importance historique</h4>
+                <p>Situé à Colleville-sur-Mer, au-dessus de la plage d’Omaha Beach, l’une des plages du Débarquement du 6 juin 1944 (D-Day), pendant la Seconde Guerre mondiale. Il symbolise le sacrifice des soldats américains pour la libération de l'Europe en 1944.</p>
+            </div>
+
+            <div class="identity-card">
+                <h3>🕊️ Fiche d’identité</h3>
+                <div class="info-row"><span class="info-label">Nom officiel :</span> <span class="info-value">Normandy American Cemetery and Memorial</span></div>
+                <div class="info-row"><span class="info-label">Lieu :</span> <span class="info-value">Colleville-sur-Mer, France</span></div>
+                <div class="info-row"><span class="info-label">Nombre de tombes :</span> <span class="info-value">9 388 soldats</span></div>
+                <div class="info-row"><span class="info-label">Superficie :</span> <span class="info-value">70 hectares</span></div>
+            </div>
+
+            <div class="opinion-box">
+                <h4>Mon Avis Personnel</h4>
+                <p>J’ai trouvé la vue particulièrement magnifique. À première vue, ce cimetière ne ressemble pas à ceux que l’on connaît. La parfaite harmonie entre les différentes tombes juives et catholiques reflète bien l’ampleur de la guerre. Cette visite était particulièrement magnifique et inoubliable.</p>
+            </div>
+        </div>
+        <label for="exp-2" class="btn-toggle"></label>
+    </article>
+
+    <article class="card">
+        <span class="tag">Cinéma • Histoire Vraie</span>
+        <h2>Tu ne tueras point</h2>
+        <p>L'incroyable destin de Desmond Doss, objecteur de conscience et héros de guerre.</p>
+        
+        <input type="checkbox" id="exp-3" class="toggle-input">
+        <div class="details">
+            <div class="summary-box">
+                <h4>📖 Résumé</h4>
+                <p>Desmond Doss, chrétien adventiste, s'engage dans l'armée mais refuse de porter une arme. Infirmier militaire, il sauve 75 vies à Okinawa sans tirer un seul coup de feu.</p>
+            </div>
+
+            <div class="identity-card">
+                <h3>🎬 Fiche d’identité</h3>
+                <div class="info-row"><span class="info-label">Réalisation :</span> <span class="info-value">Mel Gibson (2016)</span></div>
+                <div class="info-row"><span class="info-label">Acteur principal :</span> <span class="info-value">Andrew Garfield (Desmond Doss)</span></div>
+                <div class="info-row"><span class="info-label">Durée :</span> <span class="info-value">2h19</span></div>
+                <div class="info-row"><span class="info-label">Genre :</span> <span class="info-value">Guerre, Biopic, Drame</span></div>
+            </div>
+
+            <div class="opinion-box">
+                <h4>Mon Avis Personnel</h4>
+                <p>Ce film a été le premier, pour ma part, d’une série de films remémorant la guerre que j’ai pu regarder. La puissance de celui-ci était exceptionnelle. L’illustration de l’amour et de la guerre est exceptionnelle. Ce film est d’une beauté incroyable et laisse passer un message fort. Je suis convaincu que ce film est une représentation de la bonté humaine, encore plus puisqu’il s’agit d’une histoire vraie.
+          </p>
+            </div>
+        </div>
+        <label for="exp-3" class="btn-toggle"></label>
+    </article>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 Portfolio Maes Noam - Cours de français Mme Crusiaux</p>
+</footer>
+
+</body>
+</html>
